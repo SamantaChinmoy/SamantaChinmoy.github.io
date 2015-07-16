@@ -54,15 +54,14 @@ margin-top: 20px;
     display: none;
 }
 .Learn_more_button {
-    position: absolute;
     width: 140px;
     color: white;
     margin-left: 69px;
-    margin-top: 34px;
+    margin-top: 70px;
     background: #25970E;
     cursor: pointer;
     padding: 10px;
-    float: right;
+    float: middle;
 }
 .subscribe_button {
     position: absolute;
