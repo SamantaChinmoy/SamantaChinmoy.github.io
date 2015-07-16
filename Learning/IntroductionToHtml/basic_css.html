@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    </link>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div onclick="news_tab()" id="news_tab" class="tab border news_tab P-Format">
+        <center>News</center>
+    </div>
+    <div onclick="subscribe_tab()" id="subscribe_tab" class="tab border subscribe_tab subscribe_tab_format">Subscribe</div>
+    <div class="container border">
+        <div id="text_div" class="container_under_first_div border">
+            <span class="LargeFont">Welcome</span>
+            <p class="MedimumFont">Simple and effective Angularjs binding for FusionCharts javascript Charting Libary.Simple and effective Angularjs binding for FusionCharts javascript Charting Libary
+            </p>
+            <p class="P-Format">Angularjs binding for FusionCharts javascript Charting Libary</p>
+            <div class="Learn_more_button border">
+                <center>LEARN MORE</center>
+            </div>
+        </div>
+        <div id="image_div" class="container_under_first_div second_div border">
+            <span class="LargeFont">Leatest News</span>
+            <img class="img" src="image.jpg" width="90%" height="80%"></img>
+        </div>
+        <div id="formdiv" class="form_div border">
+            <form name="sub_form" id="sub_form">
+                <span class="LargeFont">&nbsp;Subscription Form</span>
+                <table cellspacing="">
+                    <tr>
+                        <td>
+                            <span class="form_lebel_font">Name</span>
+                            <input type="text" class="input" name="name" id="name"></input>
+                        </td>
+                        <td>
+                            <span class="form_lebel_font">Country</span>
+                            <select id="country" class="input" name="country">
+                                <option value="-1"></option>
+                                <option value="India">India</option>
+                                <option value="China">China</option>
+                                <option value="Usa">USA</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="form_lebel_font">Email</span>
+                            <input type="text" class="input" name="Email" id="email"></input>
+                        </td>
+                        <td>
+                            <span class="form_lebel_font">Address</span>
+                            <textarea class="input textarea" id="address"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="form_lebel_font">Sex&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <input type="radio" id="M" name="sex" value="male"></input><span class="form_lebel_font">Male</span>
+                            <input type="radio" name="sex" id="F" value="Female"></input><span class="form_lebel_font">Female</span>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td><span class="form_lebel_font">Interest</span>
+                            <input type="checkbox" name="Interest" value="Football"></input>
+                            <span class="form_lebel_font">Football</span>
+                            <input type="checkbox" name="Interest" value="Movie">
+                            <span class="form_lebel_font">Movie</span>
+                            <input type="checkbox" name="Interest" value="Reading"></input>
+                            <span class="form_lebel_font">Reading</span>
+                        </td>
+                    </tr>
+                </table>
+                <div class="subscribe_button border">
+                    <input type="button" onclick="takeValue()" name="SUBSCRIBE" id="subscribe" class="action_btn-style" value="subscribe"></input>
+                </div>
+                <div class="reset_button border">
+                    <input type="reset" name="Reset" id="subscribe" class="action_btn-style" value="reset">
+                    </input>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
