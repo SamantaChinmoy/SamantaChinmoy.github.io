@@ -6,9 +6,9 @@
 .tab {
     width: 90px;
     margin-left: 90px;
-    margin-top: -36.5px;
-    cursor: pointer;
+    margin-top: -36px;
     border-bottom: none;
+    cursor: pointer;
     float: left;
 }
 .img {
@@ -44,31 +44,32 @@ margin-top: 20px;
     float: right;
 }
 .form_div {
-    width: 94%;
-    height: 75%;
+    width: 96%;
+    height: 93%;
     margin-left: 0%;
-    margin-top: 0%;
+    margin-top: -10px;
     background: white;
     border-radius: 10px;
-    padding: 3%;
+    padding: 1.5%;
     display: none;
 }
 .Learn_more_button {
+    position: absolute;
     width: 140px;
     color: white;
     margin-left: 69px;
-    margin-top: 70px;
+    margin-top: 65px;
     background: #25970E;
     cursor: pointer;
     padding: 10px;
-    float: middle;
+    float: right;
 }
 .subscribe_button {
     position: absolute;
     width: 130px;
     color: white;
     margin-left: 550px;
-    margin-top: -12px;
+    margin-top: -20px;
     background: #25970E;
     border-radius: 3px;
     cursor: pointer;
@@ -79,7 +80,7 @@ margin-top: 20px;
     width: 130px;
     color: white;
     margin-left: 380px;
-    margin-top: -12px;
+    margin-top: -20px;
     background: #25970E;
     border-radius: 3px;
     cursor: pointer;
@@ -115,9 +116,16 @@ margin-top: 20px;
     font-size: 18px;
     background: #F3F3F3;
 }
+.display{
+    display:none;
+}
+.phone{
+    vertical-align: middle;
+margin-top:-20px;
+}
 .textarea {
     vertical-align: middle;
-    margin-top: 30px;
+    margin-top: 20px;
     width: 280px;
     height: 65px;
 }
@@ -134,4 +142,12 @@ margin-top: 20px;
 .form_lebel_font {
     color: #928989;
     font-size: 15px;
+}
+.window {
+    position:fixed;
+    width:440px;
+    height:200px;
+    display:none;
+    padding:20px;
+    background-color: red;
 }

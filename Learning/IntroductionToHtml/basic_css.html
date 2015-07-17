@@ -5,7 +5,6 @@
     </link>
     <script src="script.js"></script>
 </head>
-
 <body>
     <div onclick="news_tab()" id="news_tab" class="tab border news_tab P-Format">
         <center>News</center>
@@ -36,11 +35,10 @@
                         </td>
                         <td>
                             <span class="form_lebel_font">Country</span>
-                            <select id="country" class="input" name="country">
-                                <option value="-1"></option>
-                                <option value="India">India</option>
-                                <option value="China">China</option>
-                                <option value="Usa">USA</option>
+                            <select id="country" class="input" onchange="state();" name="country">
+                                <option value="-1" ></option>
+                                <option value="India" >India</option>
+                                <option value="Usa" >USA</option>
                             </select>
                         </td>
                     </tr>
@@ -50,10 +48,29 @@
                             <input type="text" class="input" name="Email" id="email"></input>
                         </td>
                         <td>
-                            <span class="form_lebel_font">Address</span>
-                            <textarea class="input textarea" id="address"></textarea>
+                            <span id="india_label_state"class="form_lebel_font ">State&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                             <select id="india" class="input display" name="india">
+                                <option value="WB">West Bengal</option>
+                                <option value="UP">Udar Pradesh</option>
+                            </select>
+                            <select id="nostate" onclick="countryfirst()" class="input">
+                            </select> 
+                             <select id="usa" class="input display" name="usa">
+                                <option value="California">California</option>
+                                <option value="Texas">Texas</option>
+                            </select>
                         </td>
                     </tr>
+                    <tr>
+                       <td>
+                            <span class="form_lebel_font label-phone">Phone</span>
+                            <input type="text" class="input phone" name="phone" id="phone" onkeyup="myFunction()" onblur="myfunc()"></input>
+                        </td>
+                        <td>
+                            <span class="form_lebel_font">Address</span>
+                            <textarea class="input textarea" id="address"></textarea>
+                         </td>   
+                      </tr>  
                     <tr>
                         <td><span class="form_lebel_font">Sex&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             <input type="radio" id="M" name="sex" value="male"></input><span class="form_lebel_font">Male</span>
@@ -64,8 +81,8 @@
                 <table>
                     <tr>
                         <td><span class="form_lebel_font">Interest</span>
-                            <input type="checkbox" name="Interest" value="Football"></input>
-                            <span class="form_lebel_font">Football</span>
+                            <input type="checkbox" onclick="show()" name="Interest" value="Football"></input>
+                            <span class="form_lebel_font" >Football</span>
                             <input type="checkbox" name="Interest" value="Movie">
                             <span class="form_lebel_font">Movie</span>
                             <input type="checkbox" name="Interest" value="Reading"></input>
@@ -76,13 +93,14 @@
                 <div class="subscribe_button border">
                     <input type="button" onclick="takeValue()" name="SUBSCRIBE" id="subscribe" class="action_btn-style" value="subscribe"></input>
                 </div>
-                <div class="reset_button border">
-                    <input type="reset" name="Reset" id="subscribe" class="action_btn-style" value="reset">
+                <div  class="reset_button border">
+                    <input type="reset" onclick="clear()" name="Reset" id="subscribe" class="action_btn-style" value="reset">
                     </input>
                 </div>
             </form>
         </div>
     </div>
+    <div id="dialog" class="window">ssss
+    </div>
 </body>
-
 </html>
