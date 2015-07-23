@@ -1,0 +1,25 @@
+<html>
+<head>
+	<script type="text/javascript" src="mc.js"></script>
+	</head>
+	<body>
+		<h1><center>Mortgage Calculator</center></h1>
+		<table cellspacing="5" align="center">
+			<tr>
+				<td><span>Loan Amount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text"  id="p"></td>
+			</tr>
+			<tr>
+				<td><span>Rate Of Interest&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text"  onblur="check(this.id)" id="r"></td>
+			</tr>
+			<tr>
+				<td><span>Number Of Month&nbsp;</span><input type="text"  id="n"></td>
+			</tr>
+			<tr>
+				<td><span>EMI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text"  id="e"></td>
+			</tr>
+			<tr>
+				<td><input type="button" class="text_box" id="btn" onclick="result()" value="calculate"></td>
+			</tr>
+		</table>
+	</body>
+</html>
