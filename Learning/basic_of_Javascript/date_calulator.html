@@ -1,0 +1,72 @@
+<!doctype>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="dcstyle.css">
+    <script type="text/javascript" src="dd.js"></script>
+</head>
+
+<body>
+    <h1><center>Date Calculator</center></h1>
+
+    <form name="date_form">
+        <table>
+            <tr>
+                <td><span id="" class="lebel">Start Date</span>
+                    <input type="textbox" placeholder="day" class="date day" id="sday">
+                    <input type="textbox" placeholder="month" class="date month" id="smonth">
+                    <input type="textbox" placeholder="year" class="date year" id="syear">
+                </td>
+                <td><span id="" class="lebel">End Date</span>
+                    <input type="textbox" placeholder="day" class="date day" id="eday">
+                    <input type="textbox" placeholder="month" class="date month" id="emonth">
+                    <input type="textbox" placeholder="year" class="date year" id="eyear">
+                </td>
+                </td>
+                <td>
+                    <input type="button" id="date" onclick="result(this.id)" class="btn" value="calculate">
+                </td>
+                <td id="rdate" class="re"></td>
+            </tr>
+            <tr>
+                <td><span id="" class="lebel">Start Time</span>
+                    <input type="textbox" placeholder="hour" class="date day" id="shour">
+                    <input type="textbox" placeholder="minute" class="date month" id="sminute">
+                    <input type="textbox" placeholder="second" class="date year" id="ssecond">
+                </td>
+                <td><span id="" class="lebel">End Time</span>
+                    <input type="textbox" placeholder="hour" class="date day" id="ehour">
+                    <input type="textbox" placeholder="minute" class="date month" id="eminute">
+                    <input type="textbox" placeholder="second" class="date year" id="esecond">
+                </td>
+                </td>
+                <td>
+                    <input type="button" id="time" onclick="result(this.id)" class="btn" value="calculate">
+                </td>
+                <td id="rtime"></td>
+            </tr>
+            <tr>
+                <td><span id="" class="lebel">Time</span>
+                    <input type="textbox" placeholder="day" class="date day" id="tday">
+                    <input type="textbox" placeholder="month" class="date month" id="tmonth">
+                    <input type="textbox" placeholder="year" class="date year" id="tyear">
+                    <input type="textbox" placeholder="hour" class="date day" id="thour">
+                    <input type="textbox" placeholder="minute" class="date month" id="tminute">
+                    <input type="textbox" placeholder="second" class="date year" id="tsecond">
+                </td>
+                <td>
+                    <span id="" class="lebel">Interval</span>
+                    <input type="textbox" placeholder="hour" class="date day" id="ihour">
+                </td>
+                <td>
+                    <input type="button" id="interval" onclick="result(this.id)" class="btn" value="calculate">
+                </td>
+                <td id="itime"></td>
+            </tr>
+    </form>
+    </table>
+
+
+</body>
+
+</html>
