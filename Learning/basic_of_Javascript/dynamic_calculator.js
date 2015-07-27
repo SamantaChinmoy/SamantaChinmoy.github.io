@@ -136,16 +136,16 @@
                 'value': radioButton.value[i]
             }, radioButton.function, null);
         }
-    };
+    }
 
     function basiccal() { /*Basic Calculator Layout*/
-        if (document.getElementById('mcdiv') != null) {
+        if (document.getElementById('mcdiv') !== null) {
             document.getElementById('mcdiv').remove();
         }
-        if (document.getElementById('datediv') != null) {
+        if (document.getElementById('datediv') !== null) {
             document.getElementById('datediv').remove();
         }
-        if (document.getElementById('bcdiv') != null) {
+        if (document.getElementById('bcdiv') !== null) {
             return;
         }
         var btn = ['7', '8', '9', '+', '4', '5', '6', '-', '1', '2', '3', '/', '0', '.', '=', '*', 'M+', 'Mc', 'Mr', '%', 'bk'],
@@ -165,35 +165,35 @@
         }, null, cssClass.basicCalulator.screen);
         keys = createElement('div', bcdivcon, null, null, null);
         table = createElement('table', keys, null, null, null), c = 0;
-        for (var i = 0; i < 6; i++) {
+        for ( i = 0; i < 6; i++) {
             tr = table.insertRow(i);
             for (j = 0; j < 4; j++, c++) {
                 td = tr.insertCell(0);
                 createElement('span', keys, null, null, cssClass.basicCalulator.keys).appendChild(document.createTextNode(btn[c]));
-                if (i == 5 && j == 0)
+                if (i == 5 && j === 0)
                     break;
             }
         }
         bcProcess();
-    };
+    }
 
     function datecal() { /*date calculator layout*/
         var datediv, input, span, table, tr, td, c = 1,
             i,
             form_filed, caption, placeholder;
-        if (document.getElementById('mcdiv') != null) {
+        if (document.getElementById('mcdiv') !== null) {
             document.getElementById('mcdiv').remove();
         }
-        if (document.getElementById('bcdiv') != null) {
+        if (document.getElementById('bcdiv') !== null) {
             document.getElementById('bcdiv').remove();
         }
-        if (document.getElementById('datediv') != null) {
+        if (document.getElementById('datediv') !== null) {
             return;
         }
         cssClass.allcalculator.label['margin-left'] = '0px';
         datediv = createElement('div', container, {
             'id': 'datediv'
-        }, null, cssClass.allcalculator.container)
+        }, null, cssClass.allcalculator.container);
         form_filed = createElement('fieldset', datediv, null, null, {
                 'width': '300px',
                 'height': '140px'
@@ -247,7 +247,7 @@
         table.cellSpacing = "20";
         placeholder = 'mm/dd/yyyy hh:mm:ss';
         for (var j = 0; j < 3; j++, i++) {
-            debugger;
+        
             if (i != 5) {
                 tr = table.insertRow(j);
                 if (i == 4)
@@ -285,18 +285,18 @@
                 }, cssClass.allcalculator.button);
             }
         }
-    };
+    }
 
     function mccal() { /*Mortgage Calculator layout*/
         var table, td, tr, span, btn, input, c = 1,
             i;
-        if (document.getElementById('mcdiv') != null) {
+        if (document.getElementById('mcdiv') !== null) {
             return;
         }
-        if (document.getElementById('datediv') != null) {
+        if (document.getElementById('datediv') !== null) {
             document.getElementById('datediv').remove();
         }
-        if (document.getElementById('bcdiv') != null) {
+        if (document.getElementById('bcdiv') !== null) {
             document.getElementById('bcdiv').remove();
         }
         var mcdiv = createElement('div', container, {
@@ -334,13 +334,13 @@
         e = Number(document.getElementById(mc.id[3]).value);
         r /= 1200;
         x = Math.pow((1 + r), n);
-        if (p == 0) {
+        if (p === 0) {
             p = Math.round(((e * (x - 1)) / (r * x)));
             document.getElementById(mc.id[0]).value = p;
-        } else if (n == 0) {
+        } else if (n === 0) {
             n = (Math.log(e / ((e - (p * r))))) / (Math.log(1 + r));
             document.getElementById(mc.id[2]).value = Math.round(Math.abs(n));
-        } else if (e == 0) {
+        } else if (e === 0) {
             e = (p * r * x) / (x - 1);
             document.getElementById(mc.id[3]).value = Math.round(e);
         }
@@ -368,22 +368,22 @@
     }
 
     function showdate() { /*date diifference*/
-        if (Number(document.getElementById(dc.id[0]).value) == 0 ||
-            Number(document.getElementById(dc.id[1]).value) == 0)
+        if (Number(document.getElementById(dc.id[0]).value) === 0 ||
+            Number(document.getElementById(dc.id[1]).value) === 0)
             return;
         var dString = document.getElementById(dc.id[0]).value;
 
         var d2String = document.getElementById(dc.id[1]).value;
-        debugger;
+       
         var d1 = new Date(dString);
         var d2 = new Date(d2String);
         var D = new DateDiff(d1, d2);
         document.getElementById(dc.id[2]).value = D.inDays() + " " + "Days, " + D.inMonths() + " " + "Months, " + D.inYears() + " Years.";
-    };
+    }
 
     function checkdate(id) { /*check date format */
 
-        if (Number(document.getElementById(id).value) == 0) {
+        if (Number(document.getElementById(id).value) === 0) {
             document.getElementById(id).style.backgroundColor = 'red';
         } else if (document.getElementById(id).value.split('/')[0] > 12 || document.getElementById(id).value.split('/')[1] > 31 || document.getElementById(id).value.split('/')[2] < 1600) {
             document.getElementById(id).style.backgroundColor = 'red';
@@ -394,8 +394,8 @@
 
     function showcurrdate() { /*time interval*/
         debugger;
-        if (Number(document.getElementById(dc.id[3]).value) == 0 ||
-            Number(document.getElementById("timeinterval").value) == 0)
+        if (Number(document.getElementById(dc.id[3]).value) === 0 ||
+            Number(document.getElementById("timeinterval").value) === 0)
             return;
         var ptime = document.getElementById(dc.id[3]).value;
 
@@ -408,7 +408,7 @@
 
     function checkdatetime(id) { /*check date time format*/
         debugger;
-        if (Number(document.getElementById(id).value) == 0) {
+        if (Number(document.getElementById(id).value) === 0) {
             document.getElementById(id).style.backgroundColor = 'red';
         } else if (document.getElementById(id).value.split('/')[0] > 12 || document.getElementById(id).value.split('/')[1] > 31 || document.getElementById(id).value.split('/')[2] < 1600 || document.getElementById(id).value.split('/')[2].indexOf(' ') < 0) {
             alert('Pleace Give The Right Form Including Space ')
@@ -419,7 +419,7 @@
     }
 
     function checkhour(id) { /*check interval time in hour*/
-        if (Number(document.getElementById(id).value) == 0) {
+        if (Number(document.getElementById(id).value) === 0) {
             document.getElementById(id).style.backgroundColor = 'red';
         } else {
             document.getElementById(id).style.backgroundColor = 'white';
@@ -486,10 +486,10 @@
                             // Get the last character from the equation
                             lastChar = inputVal[inputVal.length - 1];
                             // Only add operator if input is not empty and there is no operator at the last
-                            if (inputVal != '' && operators.indexOf(lastChar) == -1)
+                            if (inputVal !== '' && operators.indexOf(lastChar) == -1)
                                 input.innerHTML += btnVal;
                             // Allow minus if the string is empty
-                            else if (inputVal == '' && btnVal == '-')
+                            else if (inputVal === '' && btnVal == '-')
                                 input.innerHTML += btnVal;
                             // Replace the last operator (if exists) with the newly pressed operator
                             if (operators.indexOf(lastChar) > -1 && inputVal.length > 1) {
@@ -502,9 +502,9 @@
                         }
                 }
 
-            }
+            };
         }
-    };
+    }
 
     function createElement(tagName, parentElmentName, attribute, event, styleSheet) {
         var element, attr, style, ev;
@@ -522,5 +522,5 @@
             element.addEventListener(ev, event[ev]);
         }
         return element;
-    };
+    }
 }());

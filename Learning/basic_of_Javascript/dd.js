@@ -29,13 +29,13 @@ function DateDiff(d1, d2) {
 function TimeDiff() {
     this.hour = function(h1, h2) {
         return Math.abs(h1 - h2);
-    }
+    };
     this.minute = function(m1, m2) {
         return Math.abs(m1 - m2);
-    }
+    };
     this.second = function(s1, s2) {
         return Math.abs(s1 - s2);
-    }
+    };
 }
 
 function result(option) {
@@ -58,7 +58,7 @@ function show_date() {
     var d2 = new Date(d2String);
     var D = new DateDiff(d1, d2);
     return D.inDays() + 'days, ' +
-        D.inWeeks() + 'weeks, ' + D.inMonths() + 'months, ' + D.inYears() + 'years. '
+        D.inWeeks() + 'weeks, ' + D.inMonths() + 'months, ' + D.inYears() + 'years. ';
 
 }
 
@@ -66,12 +66,12 @@ function show_time() {
 
     var time = new TimeDiff();
     return time.hour(document.getElementById("shour").value, document.getElementById("ehour").value) + 'houres, ' +
-        time.hour(document.getElementById("sminute").value, document.getElementById("eminute").value) + 'minutes,' + time.hour(document.getElementById("ssecond").value, document.getElementById("esecond").value) + 'seconds.'
+        time.hour(document.getElementById("sminute").value, document.getElementById("eminute").value) + 'minutes,' + time.hour(document.getElementById("ssecond").value, document.getElementById("esecond").value) + 'seconds.';
 
 }
 
 function interval() {
-    debugger;
+  
     var ptime = document.getElementById("tyear").value + "-" + document.getElementById("tmonth").value + "-" + document.getElementById("tday").value + " " + document.getElementById("thour").value + ":" + document.getElementById("tminute").value + ":" + document.getElementById("tsecond").value;
     var d = new Date(ptime);
     var itime = d.getTime() + document.getElementById("ihour").value * 3600000;

@@ -40,7 +40,7 @@
             for (var j = 0; j < 7; j++) {
                 if(id=="add")
           document.getElementById("cell" + i + "" + j).innerHTML = genrate_number_sum();
-      else if(id="sub")
+      else if(id=="sub")
          document.getElementById("cell" + i + "" + j).innerHTML = genrate_number_sub();
             }
 

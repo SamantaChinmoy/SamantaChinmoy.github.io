@@ -7,7 +7,7 @@ function takeValue() {
          arr = [];
      var checkbox = document.getElementsByName("Interest");
      for (var i = 0; i < checkbox.length; i++) {
-         if (checkbox[i].checked == true) arr.push(checkbox[i].value);
+         if (checkbox[i].checked === true) arr.push(checkbox[i].value);
      }
      obj.name = name;
      obj.country = country;
@@ -48,10 +48,10 @@ function takeValue() {
      var xa1 = String(n1);
      var reg = /^[987][0-9]{9}$/;
      var isN1 = reg.test(xa1);
-     if (isN1 == true) {
+     if (isN1 === true) {
          document.getElementById("phone").style.backgroundColor = "green";
      }
-     if (isN1 == false) {
+     if (isN1 === false) {
          document.getElementById("phone").style.backgroundColor = "red";
      }
  }
@@ -65,7 +65,7 @@ function takeValue() {
      var reg2 = /[0-9]\1{5}/;
      var isN2 = reg1.test(xa);
      var isN = reg.test(xa);
-     if (isN == true && isN2 == true && len <= 10) {
+     if (isN === true && isN2 === true && len <= 10) {
          document.getElementById("phone").style.backgroundColor = "green";
      } else {
          document.getElementById("phone").style.backgroundColor = "red";
