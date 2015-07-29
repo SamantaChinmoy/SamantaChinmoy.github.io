@@ -1,0 +1,156 @@
+.border {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #D2D9DD;
+}
+.tab {
+    width: 90px;
+    margin-left: 90px;
+    margin-top: -36px;
+    border-bottom: none;
+    cursor: pointer;
+    float: left;
+}
+.error{
+color:red;
+}
+.img {
+margin-top: 20px;
+}
+.news_tab {
+    background: #E5EFFF;
+    border-right: ;
+}
+.subscribe_tab {
+    margin-left: 10px;
+}
+.container {
+    right: 10%;
+    width: 823px;
+    height: 300px;
+    margin-left: 5%;
+    margin-top: 10%;
+    background: #E5EFFF;
+    border-radius: 10px;
+    padding: 2%;
+}
+.container_under_first_div {
+    width: 42%;
+    height: 82%;
+    background: white;
+    border-radius: 10px;
+    padding: 3%;
+    float: left;
+    display: block;
+}
+.second_div {
+    float: right;
+}
+.form_div {
+    width: 96%;
+    height: 93%;
+    margin-left: 0%;
+    margin-top: -10px;
+    background: white;
+    border-radius: 10px;
+    padding: 1.5%;
+    display: none;
+}
+.Learn_more_button {
+    position: absolute;
+    width: 140px;
+    color: white;
+    margin-left: 69px;
+    margin-top: 65px;
+    background: #25970E;
+    cursor: pointer;
+    padding: 10px;
+    float: right;
+}
+.subscribe_button {
+    position: absolute;
+    width: 130px;
+    color: white;
+    margin-left: 550px;
+    margin-top: 1px;
+    background: #25970E;
+    border-radius: 3px;
+    cursor: pointer;
+    float: right;
+}
+.reset_button {
+    position: absolute;
+    width: 130px;
+    color: white;
+    margin-left: 380px;
+    margin-top: 1px;
+    background: #25970E;
+    border-radius: 3px;
+    cursor: pointer;
+    float: right;
+}
+.LargeFont {
+    color: #928989;
+    font-size: 22px;
+}
+.MedimumFont {
+    color: #BBB4B4;
+    font-size: 13.81px;
+    padding: 2.5%;
+}
+.P-Format {
+    color: #1b6bce;
+    font-size: 13.81px;
+    padding: 10px;
+}
+.subscribe_tab_format {
+    font-size: 13.81px;
+    padding: 10px;
+    color: black;
+}
+.input {
+    margin-top: 10px;
+    margin-right: 50px;
+    width: 250px;
+    height: 35px;
+    border: 1px solid;
+    border-color: ;
+    font-family: arial;
+    font-size: 18px;
+    background: #F3F3F3;
+}
+.display{
+    display:none;
+}
+.phone{
+    vertical-align: middle;
+margin-top:-20px;
+}
+.textarea {
+    vertical-align: middle;
+    margin-top: 20px;
+    width: 280px;
+    height: 65px;
+}
+.action_btn-style {
+    width: 130px;
+    color: white;
+    border: solid 1px #25970E;
+    border-radius: 3px;
+    padding: 10px;
+    background: #25970E;
+    font-size: 20px;
+    cursor: pointer;
+}
+.form_lebel_font {
+    color: #928989;
+    font-size: 15px;
+}
+.window {
+    position:fixed;
+    width:440px;
+    height:200px;
+    display:none;
+    padding:20px;
+    background-color: red;
+}
