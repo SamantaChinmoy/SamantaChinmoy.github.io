@@ -1,3 +1,4 @@
+"use strict"
 function result() {
     var p, r, n, e, x;
     p = Number(document.getElementById("p").value);

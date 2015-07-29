@@ -7,14 +7,13 @@ function DateDiff(d1, d2) {
 
     this.inWeeks = function() {
 
-
         return Math.abs(parseInt((d1.getTime() - d2.getTime()) / (24 * 3600 * 1000 * 7)));
     };
 
     this.inMonths = function() {
 
         var d1Y = d1.getFullYear();
-        var d2Y = d2.getFullYear();
+        var d2Y = d2.getFullYear()
         var d1M = d1.getMonth();
         var d2M = d2.getMonth();
 
@@ -76,5 +75,5 @@ function interval() {
     var d = new Date(ptime);
     var itime = d.getTime() + document.getElementById("ihour").value * 3600000;
     var d1 = new Date(parseInt(itime));
-    return "time is:" + d1.toString();
+    return"time is:" + d1.toString();
 }
