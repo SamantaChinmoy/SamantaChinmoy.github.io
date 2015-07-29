@@ -3,14 +3,13 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     </link>
     <script src="script.js">
-
     </script>
 </head>
 <body>
 <?php
 $nameErr = $emailErr=$countryErr=$phErr=$suMsg=$addressErr=$genderErr=$interestErr="";
 $name=$email=$country=$ph=$address=$gender=$indiaSt=$usaSt="";
-$interest=[];
+$interest=array();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
      $valid = true;
    if (empty($_POST["name"])) {
@@ -52,7 +51,12 @@ $valid = false;
    else
    {
      $ph = $_POST['phone'];
-     if(strlen($ph)<10||strlen($ph)>10)
+     if(!ctype_digit($ph))
+     {
+      $phErr="Phone Number should not be letter";
+       $valid = false;
+     }
+     else if(strlen($ph)<10||strlen($ph)>10)
      {
         $phErr="Phone Number should be 10 digit";
        $valid = false;
@@ -64,7 +68,6 @@ $valid = false;
    } else {
      $address = $_POST["address"];
    }
-
    if (empty($_POST["gender"])) {
      $genderErr = "Gender is required";
      $valid=false;
@@ -85,12 +88,10 @@ $valid = false;
    if(!empty($_POST["read"]))
        $interest[]=$_POST["read"];
    }
-
    
    if($valid)
    {
    $suMsg="success.....";
-
 $myf = fopen("/opt/lampp/htdocs/my/details.csv", "a");
     fwrite($myf,$name."\n");
      fwrite($myf,$email."\n");
