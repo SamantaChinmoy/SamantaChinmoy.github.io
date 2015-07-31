@@ -80,8 +80,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if ($valid) {
         $myf = @fopen("details.csv", "a");
-        
-        
         fwrite($myf, $name . "\n");
         fwrite($myf, $email . "\n");
         fwrite($myf, $country . "\n");

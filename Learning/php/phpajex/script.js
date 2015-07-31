@@ -85,7 +85,7 @@ function ajax() {
         myParameters.push(val);
         var checkboxes = document.getElementsByName('Interest[]');
         val = "";
-        for (var i = 0, n = checkboxes.length; i < n; i++) {
+        for (var i = 0; i < checkboxes.length; i++) {
             if (checkboxes[i].checked) {
                 val += checkboxes[i].value + ",";
             }
