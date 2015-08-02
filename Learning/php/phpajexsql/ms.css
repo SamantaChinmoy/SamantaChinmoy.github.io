@@ -1,0 +1,92 @@
+.border {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #D2D9DD;
+}
+.error{
+color:red;
+}
+.img {
+margin-top: 20px;
+}
+
+.container {
+    right: 10%;
+    width: 823px;
+    height: 300px;
+    margin-left: 5%;
+    margin-top: 10%;
+    background: #E5EFFF;
+    border-radius: 10px;
+    padding: 2%;
+}
+.form_div {
+    width: 96%;
+    height: 93%;
+    margin-left: 0%;
+    margin-top: -10px;
+    background: white;
+    border-radius: 10px;
+    padding: 1.5%;
+}
+.subscribe_button {
+    position: absolute;
+    width: 130px;
+    color: white;
+    margin-left: 550px;
+    margin-top: 1px;
+    background: #25970E;
+    border-radius: 3px;
+    cursor: pointer;
+    float: right;
+}
+.reset_button {
+    position: absolute;
+    width: 130px;
+    color: white;
+    margin-left: 380px;
+    margin-top: 1px;
+    background: #25970E;
+    border-radius: 3px;
+    cursor: pointer;
+    float: right;
+}
+
+.input {
+    margin-top: 10px;
+    margin-right: 50px;
+    width: 250px;
+    height: 35px;
+    border: 1px solid;
+    border-color: ;
+    font-family: arial;
+    font-size: 18px;
+    background: #F3F3F3;
+}
+.display{
+    display:none;
+}
+.phone{
+    vertical-align: middle;
+margin-top:-20px;
+}
+.textarea {
+    vertical-align: middle;
+    margin-top: 20px;
+    width: 280px;
+    height: 65px;
+}
+.action_btn-style {
+    width: 130px;
+    color: white;
+    border: solid 1px #25970E;
+    border-radius: 3px;
+    padding: 10px;
+    background: #25970E;
+    font-size: 20px;
+    cursor: pointer;
+}
+.form_lebel_font {
+    color: #928989;
+    font-size: 15px;
+}
