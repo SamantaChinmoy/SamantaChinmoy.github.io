@@ -1,110 +1,155 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="assets\css\style.css">
-</head>
+	<title></title>
+	<script type="text/javascript" src="amitabh-data.js" ></script>
+<script type="text/javascript" src="raphael.js"></script>
 <body>
- <div id="profile" class="profile">
- 	<img src="images\bg.jpg">
- 	<div class="profile-des">
- 		<img src="images\avatar.jpg" class="profile-pic" align="right">
- 		<div class="name">
- 			<p id="" align="right" class="profile-des-color">Chinmoy Samanta<br>Trainee-JS<br>crafted by Fusion Charts</p>
- 		</div>
- 	</div>
- 	<div class="links" align="right">
- 		<a href="https://www.facebook.com">
-			<img  alt="facebook" src="images\icons\f6.png" class="fb" id="fbid">
-		</a>
-		<a href="https://github.com">
-			<img  alt="github" src="images\icons\g6.png" class="git">
-		</a>
-		<a href="">
-			<img alt="twitter" src="images\icons\t6.png" class="twit" valign="top">
-		</a>
-		<a href="">
-			<img alt="email" src="images\icons\msg1.png" class="mail" valign="top">
-		</a>
-		<p class="profile-des-color">Untitled | Design: Fusion Charts</p>
- 	</div>
- </div>
+<h1>Twitter visulization</h1>
+<script>
+window.onload = function() {
+    fun();
+}
 
- <div id="main" class="right-container">
- 		<div id="" class="right-container1">
- 		<span class="pr1">
- 			<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
- 			<p id="">Proin et dapibus enim, tempor lobortis mauris. Nulla sollicitudin, velit lobortis luctus rutrum, diam nulla sollicitudin odio, vel tincidunt augue nulla in eros. Etiam at mauris semper, vestibulum magna at, accumsan sapien. Fusce neque dui, feugiat non odio vitae, tempor efficitur odio. Maecenas vestibulum mi quis venenatis egestas. Morbi sed tristique massa.</p>
- 		</span>
- 		<button type="submit" onclick="" id="lern" class="l-button"><center>Learn More</center></button>
- 		</div>
- 	<div id="" class="right-container2">
- 		<h3><span class="heading">Recent Work</span></h3>
- 		<span class="th1">
- 			<img src="images\thumbs\01.jpg" alt="thumb" class="thumb" />
- 			<p class="p1">First</p>
- 			<p class="p11">First one</p>
- 		</span>
- 		<span class="thp1">
- 			
- 		</span>
- 		<span class="th2">
- 			<img src="images\thumbs\02.jpg" alt="thumb" class="thumb" />
- 			<p class="p2">Second</p>
- 			<p id="p21">Second one</p>
- 		</span>
- 		<span class="th3">
- 			<img src="images\thumbs\03.jpg" alt="thumb" class="thumb" />
- 			<p class="p3">Third</p>
- 			<p class="p31">Third one</p>
- 		</span>
- 		<span class="th4">
- 			<img src="images\thumbs\04.jpg" alt="thumb" class="thumb" />
- 			<p class="p4">Fourth</p>
- 			<p class="p41">Fourth one</p>
- 		</span>
- 		<span class="th5">
- 			<img src="images\thumbs\05.jpg" alt="thumb" class="thumb" />
- 			<p class="p5">Fifth</p>
- 			<p class="p51">Fifth one</p>
- 		</span>
- 		<span class="th6">
- 			<img src="images\thumbs\06.jpg" alt="thumb" class="thumb" />
- 			<p class="p6">Sixth</p>
- 			<p class="p61">Sixth one</p>
- 		</span>
- 		<button type="submit" onclick="" id="full" class="pr-button"><center>Full Portfolio</center></button>
- 		</div>	
- 	<div id="" class="right-container3">
- 		<span class="heading">
- 			<h3>Get In Touch</h3>
- 			<p id="" class="">laoreet, augue vel imperdiet posuere, nunc magna mattis quam, placerat egestas lectus dui vitae diam. Nunc eu tempor eros, vitae semper justo. Cras vitae libero sed dui porta efficitur ac id arcu.</p>
- 		</span>
- 		<div class="form-container">
- 			<form>
- 			<table cellspacing="50" cellpadding="0">
- 				<tr>
-                  <td><input type="text" name="name" id="name" class="fsize1" value="Name"></td>
-                  <td><input type="text" name="email" id="email" class="fsize2" value="Email"></td>
-                </tr>
-                <tr>
-                 <td><textarea name="address" rows="6" cols="20"  class="area" text="Address">Address</textarea>
-                </tr>
- 			</table>
- 			<button type="submit" id="message" class="msg-button"><center>Send Message</center></button>
- 		</form>
- 		</div>
- 		<div class="author">
- 			<img src="images\icons\home.ico" alt="thumb" class="home" valign="top">
- 			<div class="a1"><p id="">Address line1<br>Address line2<br>Address line3</p></div>
- 			<img src="images\icons\mob.png" alt="thumb" class="mob">
- 			<div class="a2"><p id="">7602412686</p></div>
- 			<img src="images\icons\msg.png" alt="thumb" class="msg" valign="top">
- 			<div class="a3"><p id="">chinmoy@fusioncharts.com</p></div>
- 		</div>
- 	</div>
- 	
+function fun() {
+    var color = "black",
+        moviecheck = 0,
+        familycheck = 0,
+        sc = 3,
+        fc = 3,
+        mc = 3,
+        sport, family, movie,
+        sportcheck = 0;
+    var R = Raphael(0, 100, 1300, 600);
+    console.log(amitav.length);
+    var row = Math.sqrt(amitav.length);
+    sport = R.rect(50, 50, 10, 10).click(function() {
+        if (sc % 2 == 0) {
+            this.attr({
+                fill: "grey"
+            });
+            sportcheck = 0;
+            circle(row, row);
+        } else {
+            this.attr({
+                fill: "#66FF66"
+            });
+            sportcheck = 1;
+            circle(row, row);
+        }
+        sc++;
+    }).attr({
+        fill: 'grey'
+    });
+    R.text(80, 55, "sport").attr({
+        "font-size": 15
+    });
+    family = R.rect(50, 70, 10, 10).attr({
+        fill: 'grey'
+    }).click(function() {
+        if (mc % 2 == 0) {
+            this.attr({
+                fill: "grey"
+            });
+            moviecheck = 0;
+            circle(row, row);
+        } else {
+            this.attr({
+                fill: "red"
+            });
+            moviecheck = 1;
+            circle(row, row);
+        }
+        mc++;
+    });
+    R.text(80, 75, "Movie").attr({
+        "font": 10
+    });
+    movie = R.rect(50, 90, 10, 10).attr({
+        fill: 'grey'
+    }).click(function() {
+        if (fc % 2 == 0) {
+            this.attr({
+                fill: "grey"
+            });
+            familycheck = 0;
+            circle(row, row);
+        } else {
+            this.attr({
+                fill: "yellow"
+            });
+            familycheck = 1;
+            circle(row, row);
+        }
+        fc++;
+    });
+    R.text(80, 95, "Family").attr({
+        "font": 10
+    });
+    R.rect(50, 110, 10, 10).attr({
+        fill: 'grey'
+    }).click(function() {
+        moviecheck = 0;
+        familycheck = 0;
+        sportcheck = 0;
+        sport.attr({
+            fill: 'grey'
+        });
+        movie.attr({
+            fill: 'grey'
+        });
+        family.attr({
+            fill: 'grey'
+        });
+        circle(row, row);
+    });
+    R.text(85, 115, "Evrything").attr({
+        "font": 10
+    });
+    R.text(100, 30, amitav[0].user.name).attr({
+        "font-size": 20
+    });
+    circle(row, row);
 
- </div>
+    function circle(cols, rows) {
+        var count = 0,
+            str, sportcat = 0;
+        var radius = 5;
+        var diameter = 2 * radius;
+        var padding = 6;
+        var recWidth = cols * (padding + diameter);
+        var recHeight = rows * (padding + diameter);
+        loop1: for (var j = 0; j < rows; j++) {
 
+            cy = 20 + padding + radius + (j * (diameter + padding))
+            for (var k = 0; k < cols; k++) {
+                count++;
+                if (count === amitav.length) {
+                    break loop1;
+                }
+                if ((sportcheck == 1) && (amitav[count].text.match(/(sport|cricket|football|kbc)/i))) {
+
+                    color = '#66FF66';
+                } else if ((moviecheck == 1) && (amitav[count].text.match(/(cinema|movie|film)/i))) {
+                    color = 'red';
+                } else if ((familycheck == 1) && (amitav[count].text.match(/(family|husband|wife|children|sister)/))) {
+                    color = 'yellow';
+                } else {
+
+                    color = "grey";
+                }
+                var cx = 600 + 50 + padding + radius + (k * (diameter + padding));
+                var c = R.circle(cx, cy, radius).attr({
+                    fill: color,
+                    stroke: 'none',
+                    title: amitav[count].text
+                });
+
+            }
+        }
+    }
+
+}
+</script>
 </body>
 </html>

@@ -1,6 +1,13 @@
 
+/* jshint strict: false */
+/* jshint quotmark: false*/
+/*jshint unused:false*/
+// jshint undef:false
+/*jshint -W009 */ 
+/* jshint ignore:start */
 function ajax(url,parameters,readyfun) {
     var httpxml;
+
     try {
         httpxml = new XMLHttpRequest();
     } catch (e) {
@@ -24,6 +31,7 @@ readyfun(httpxml);
 };
    
 }
+/* jshint ignore:end */
 function validation() //validation
 {  
 var myForm = document.forms[0];
@@ -32,7 +40,7 @@ ajax('validation.php',parameters, function stateChanged(hx) {
         if (hx.readyState == 4) {
             var myObject = JSON.parse(hx.responseText);
             
-            if (myObject.data[0].status_form === "NOTOK") { // status of form if notok
+            if (myObject.data[0].status_form === "NOTOK") {/* falls through */ // status of form if notok
                 document.getElementById("errdiv").innerHTML = myObject.data[0].msg;
             } else {
                 
@@ -47,7 +55,7 @@ function del(id)//delete
 {
     var param="id="+id;
 ajax('delete.php',param,function del(hx){
-    document.body.innerHTML=hx.responseText});
+    document.body.innerHTML=hx.responseText;});
 } 
 function update(id)//update
 {
@@ -103,7 +111,7 @@ ajax('update.php',parameters, function statechange(hx) {
         myParameters.push(val);
         var checkboxes = document.getElementsByName('interest[]');
         val = "";
-        for (var i = 0; i < checkboxes.length; i++) {
+        for (i = 0; i < checkboxes.length; i++) {
             if (checkboxes[i].checked) {
                 val += checkboxes[i].value + ",";
             }
