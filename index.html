@@ -1,155 +1,78 @@
-<!DOCTYPE html>
 <html>
+
 <head>
-	<title></title>
-	<script type="text/javascript" src="amitabh-data.js" ></script>
-<script type="text/javascript" src="raphael.js"></script>
-<body>
-<h1>Twitter visulization</h1>
-<script>
-window.onload = function() {
-    fun();
-}
+    <title></title>
+    <script type="text/javascript" src="amitabh-data.js"></script>
+    <script type="text/javascript" src="raphael.js"></script>
 
-function fun() {
-    var color = "black",
-        moviecheck = 0,
-        familycheck = 0,
-        sc = 3,
-        fc = 3,
-        mc = 3,
-        sport, family, movie,
-        sportcheck = 0;
-    var R = Raphael(0, 100, 1300, 600);
-    console.log(amitav.length);
-    var row = Math.sqrt(amitav.length);
-    sport = R.rect(50, 50, 10, 10).click(function() {
-        if (sc % 2 == 0) {
-            this.attr({
-                fill: "grey"
-            });
-            sportcheck = 0;
-            circle(row, row);
-        } else {
-            this.attr({
-                fill: "#66FF66"
-            });
-            sportcheck = 1;
-            circle(row, row);
-        }
-        sc++;
-    }).attr({
-        fill: 'grey'
-    });
-    R.text(80, 55, "sport").attr({
-        "font-size": 15
-    });
-    family = R.rect(50, 70, 10, 10).attr({
-        fill: 'grey'
-    }).click(function() {
-        if (mc % 2 == 0) {
-            this.attr({
-                fill: "grey"
-            });
-            moviecheck = 0;
-            circle(row, row);
-        } else {
-            this.attr({
-                fill: "red"
-            });
-            moviecheck = 1;
-            circle(row, row);
-        }
-        mc++;
-    });
-    R.text(80, 75, "Movie").attr({
-        "font": 10
-    });
-    movie = R.rect(50, 90, 10, 10).attr({
-        fill: 'grey'
-    }).click(function() {
-        if (fc % 2 == 0) {
-            this.attr({
-                fill: "grey"
-            });
-            familycheck = 0;
-            circle(row, row);
-        } else {
-            this.attr({
-                fill: "yellow"
-            });
-            familycheck = 1;
-            circle(row, row);
-        }
-        fc++;
-    });
-    R.text(80, 95, "Family").attr({
-        "font": 10
-    });
-    R.rect(50, 110, 10, 10).attr({
-        fill: 'grey'
-    }).click(function() {
-        moviecheck = 0;
-        familycheck = 0;
-        sportcheck = 0;
-        sport.attr({
-            fill: 'grey'
-        });
-        movie.attr({
-            fill: 'grey'
-        });
-        family.attr({
-            fill: 'grey'
-        });
-        circle(row, row);
-    });
-    R.text(85, 115, "Evrything").attr({
-        "font": 10
-    });
-    R.text(100, 30, amitav[0].user.name).attr({
-        "font-size": 20
-    });
-    circle(row, row);
-
-    function circle(cols, rows) {
-        var count = 0,
-            str, sportcat = 0;
-        var radius = 5;
-        var diameter = 2 * radius;
-        var padding = 6;
-        var recWidth = cols * (padding + diameter);
-        var recHeight = rows * (padding + diameter);
-        loop1: for (var j = 0; j < rows; j++) {
-
-            cy = 20 + padding + radius + (j * (diameter + padding))
-            for (var k = 0; k < cols; k++) {
-                count++;
-                if (count === amitav.length) {
-                    break loop1;
-                }
-                if ((sportcheck == 1) && (amitav[count].text.match(/(sport|cricket|football|kbc)/i))) {
-
-                    color = '#66FF66';
-                } else if ((moviecheck == 1) && (amitav[count].text.match(/(cinema|movie|film)/i))) {
-                    color = 'red';
-                } else if ((familycheck == 1) && (amitav[count].text.match(/(family|husband|wife|children|sister)/))) {
-                    color = 'yellow';
-                } else {
-
+    <body>
+        <script>
+            window.onload = function() {
+                var paper = Raphael(0, 0, 1300, 800),
+                    angle = 0,
+                    cx = 600,
+                    cy = 400,
+                    r = 0,
+                    c = 0,
+                    radius = 10,
+                    d = 0,
+                    count = 0,
                     color = "grey";
+                var s = paper.set(),
+                    arr = {
+                        x: [],
+                        y: []
+                    };
+                for (var i = 0; i < amitav.length; i++) {
+                    if (i % 6 === 0) {
+                        c = c + 6;
+                        r = r + 20;
+                        d++;
+                        i = i - 1;
+                    }
+                    for (var j = 0; j < c; j++) {
+                        if (count != amitav.length) {
+                            if (amitav[count].text.match(/(sport|cricket|football|kbc)/i)) {
+
+                                color = '#66FF66';
+                            } else if (amitav[count].text.match(/(cinema|movie|film)/i)) {
+                                color = 'red';
+                            } else if (amitav[count].text.match(/(family|husband|wife|children|sister)/)) {
+                                color = 'yellow';
+                            } else {
+
+                                color = "grey";
+                            }
+                            x = cx + r * Math.cos(angle * (Math.PI / 180));
+                            y = cy + r * Math.sin(angle * (Math.PI / 180));
+                            var circle = paper.circle((200 + Math.random() * 1000), (200 + Math.random() * 500), 10).attr({
+                                fill: color,
+                                title: amitav[count].text
+                            }).hide();
+                            s.push(circle);
+                            arr.x.push(x);
+                            arr.y.push(y);
+                            angle = angle + (360 / (d * 6));
+                            i++;
+                            count++;
+                        }
+
+                    }
                 }
-                var cx = 600 + 50 + padding + radius + (k * (diameter + padding));
-                var c = R.circle(cx, cy, radius).attr({
-                    fill: color,
-                    stroke: 'none',
-                    title: amitav[count].text
-                });
 
+                function anim(count) {
+                    if (count >= s.length) {
+                        return
+                    }
+                    s[count].show();
+                    s[count].animate({
+                        cx: arr.x[count],
+                        cy: arr.y[count]
+                    }, 50, 'linear', anim.bind(window, count + 1));
+                };
+                anim(0);
             }
-        }
-    }
+        </script>
+    </body>
 
-}
-</script>
-</body>
 </html>
