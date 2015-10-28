@@ -1,12 +1,217 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title></title>
-    <script type="text/javascript" src="js/amitabh-data.js"></script>
-    <script type="text/javascript" src="js/raphael.js"></script>
-     <script type="text/javascript" src="js/src.js"></script>
-    <body>
-    <h1>Twitter Visualization</h1>
-    </body>
+    <title>Test Editing GUI</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Test Editing GUI</h1>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="filter_div">
+                    <span>FILTERS</span>
+                    <select id="chart-type" class="form-control">
+                        <option value="-1" disabled selected hidden>Chart Type</option>
+                        <optgroup label="Charts" rel="charts/">
+                            <option value="Column2D">Column2D</option>
+                            <option value="Column3D">Column3D</option>
+                            <option value="Pie2D">Pie2D</option>
+                            <option value="Pie3D">Pie3D</option>
+                            <option value="Line">Line</option>
+                            <option value="Bar2D">Bar2D</option>
+                            <option value="Bar3D">Bar3D</option>
+                            <option value="Area2D">Area2D</option>
+                            <option value="Doughnut2D">Doughnut2D</option>
+                            <option value="Doughnut3D">Doughnut3D</option>
+                            <option value="Pareto2D">Pareto2D</option>
+                            <option value="Pareto3D">Pareto3D</option>
+                            <option value="MSColumn2D">MSColumn2D</option>
+                            <option value="MSColumn3D">MSColumn3D</option>
+                            <option value="MSBar2D">MSBar2D</option>
+                            <option value="MSBar3D">MSBar3D</option>
+                            <option value="MSLine">MSLine</option>
+                            <option value="ZoomLine">ZoomLine</option>
+                            <option value="MSArea">MSArea</option>
+                            <option value="StackedColumn2D">StackedColumn2D</option>
+                            <option value="Marimekko">Marimekko</option>
+                            <option value="StackedColumn3D">StackedColumn3D</option>
+                            <option value="StackedArea2D">StackedArea2D</option>
+                            <option value="StackedColumn2DLine">StackedColumn2DLine</option>
+                            <option value="StackedColumn3DLine">StackedColumn3DLine</option>
+                            <option value="StackedBar2D">StackedBar2D</option>
+                            <option value="StackedBar3D">StackedBar3D</option>
+                            <option value="MSStackedColumn2D">MSStackedColumn2D</option>
+                            <option value="msstackedcombidy2d">MSStackedCombiDY2D (Custom: JDA Combi)</option>
+                            <option value="MSCombi2D">MSCombi2D</option>
+                            <option value="MSCombi3D">MSCombi3D</option>
+                            <option value="MSColumnLine3D">MSColumnLine3D</option>
+                            <option value="MSCombiDY2D">MSCombiDY2D</option>
+                            <option value="MSColumn3DLineDY">MSColumn3DLineDY</option>
+                            <option value="StackedColumn3DLineDY">StackedColumn3DLineDY</option>
+                            <option value="MSStackedColumn2DLineDY">MSStackedColumn2DLineDY</option>
+                            <option value="Scatter">Scatter</option>
+                            <option value="Bubble">Bubble</option>
+                            <option value="ScrollColumn2D">ScrollColumn2D</option>
+                            <option value="ScrollLine2D">ScrollLine2D</option>
+                            <option value="ScrollArea2D">ScrollArea2D</option>
+                            <option value="ScrollStackedColumn2D">ScrollStackedColumn2D</option>
+                            <option value="ScrollCombi2D">ScrollCombi2D</option>
+                            <option value="ScrollCombiDY2D">ScrollCombiDY2D</option>
+                        </optgroup>
+                        <optgroup label="PowerCharts" rel="charts/">
+                            <option value="Spline">Spline</option>
+                            <option value="SplineArea">SplineArea</option>
+                            <option value="MSSpline">MSSpline</option>
+                            <option value="MSSplineDY">MSSplineDY</option>
+                            <option value="MSSplineArea">MSSplineArea</option>
+                            <option value="MultiAxisLine">MultiAxisLine</option>
+                            <option value="MultiLevelPie">MultiLevelPie</option>
+                            <option value="Waterfall2D">Waterfall2D</option>
+                            <option value="MSStepLine">MSStepLine</option>
+                            <option value="ErrorBar2D">ErrorBar2D</option>
+                            <option value="HorizontalErrorBar2D">HorizontalErrorBar2D</option>
+                            <option value="ErrorScatter">ErrorScatter</option>
+                            <option value="ErrorLine">ErrorLine</option>
+                            <option value="LogMSLine">LogMSLine</option>
+                            <option value="LogMSColumn2D">LogMSColumn2D</option>
+                            <option value="LogStackedColumn2D">LogStackedColumn2D</option>
+                            <option value="Radar">Radar</option>
+                            <option value="DragNode">DragNode</option>
+                            <option value="CandleStick">CandleStick</option>
+                            <option value="SelectScatter">Select Scatter</option>
+                            <option value="HeatMap">HeatMap</option>
+                            <option value="BoxAndWhisker2D">BoxAndWhisker2D</option>
+                            <option value="DateAxis">Date Axis</option>
+                            <option value="DragColumn2D">Dragable Column 2D</option>
+                            <option value="DragLine">Dragable Line</option>
+                            <option value="DragArea">Dragable Area</option>
+                            <option value="Kagi">Kagi</option>
+                            <option value="InverseMSLine">InverseMSLine</option>
+                            <option value="InverseMSColumn2D">InverseMSColumn2D</option>
+                            <option value="InverseMSArea">InverseMSArea</option>
+                        </optgroup>
+                        <optgroup label="Widgets" rel="widgets/">
+                            <option value="AngularGauge">AngularGauge</option>
+                            <option value="Funnel">Funnel</option>
+                            <option value="Pyramid">Pyramid</option>
+                            <option value="SparkLine">SparkLine</option>
+                            <option value="SparkColumn">SparkColumn</option>
+                            <option value="SparkWinLoss">SparkWinLoss</option>
+                            <option value="HBullet">HBullet</option>
+                            <option value="VBullet">VBullet</option>
+                            <option value="HLinearGauge">HLinearGauge</option>
+                            <option value="HLED">HLED</option>
+                            <option value="VLED">VLED</option>
+                            <option value="Thermometer">Thermometer</option>
+                            <option value="Cylinder">Cylinder</option>
+                            <option value="Bulb">Bulb</option>
+                            <option value="Gantt">Gantt</option>
+                            <option value="DrawingPad">DrawingPad</option>
+                            <option value="RealTimeArea">RealTimeArea</option>
+                            <option value="RealTimeColumn">RealTimeColumn</option>
+                            <option value="RealTimeLine">RealTimeLine</option>
+                            <option value="RealTimeLineDY">RealTimeLineDY</option>
+                            <option value="RealTimeStackedArea">RealTimeStackedArea</option>
+                            <option value="RealTimeStackedColumn">RealTimeStackedColumn</option>
+                        </optgroup>
+
+                    </select>
+                </div>
+                <select id="chart-features" class="form-control">
+                    <option value="-1" disabled selected hidden>Chart Features</option>
+                    <option value="chart-caption">Chart Caption</option>
+                    <option value="number-formatter">Number Formatter</option>
+                    <option value="lagend">Legend</option>
+                    <option value="font-comdetics">Font Comdetics</option>
+                </select>
+            </div>
+            <div class="col-md-5">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Description:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="desciption" placeholder="Description">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-1">Width:</label>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" placeholder="Width">
+                        </div>
+                        <label class="control-label col-md-2">Height:</label>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" placeholder="Height">
+                        </div>
+                        <label class="control-label col-md-1">Type:</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" placeholder="Type">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Features:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="Features" placeholder="Features">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">New&nbsp;Tag:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="new_tag" placeholder="New Tag">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Data Source:</label>
+                        <div class="col-md-2"></div>
+                        <textarea id="chardata" class="form-control" style="width: 440px; height: 300px; resize: vertical; overflow: auto"></textarea>
+                    </div>
+                </form>
+                <div class="pagination_div">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#">
+                                <span>&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="#">1</a>
+                        </li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span>&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="chart_container_div" id="chart-container"></div>
+                <div class="previous_next_button_div">
+                    <div class="col-md-4"></div>
+                    <button type="button" class="btn btn-default">Previous</button>
+                    <button type="button" class="btn btn-default">next</button>
+                </div>
+                <div>
+                    <div class="col-md-3"></div>
+                    <button type="button" class="btn btn-default">Render</button>
+                    <button type="button" class="btn btn-default">Modify</button>
+                    <button type="button" class="btn btn-default">AddNew</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
 </html>

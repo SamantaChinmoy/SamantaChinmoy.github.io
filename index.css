@@ -1,0 +1,18 @@
+h1{
+ text-align: center;
+}
+.pagination_div {
+    margin-top: -20px;
+}
+.chart_container_div {
+    width: 500px;
+    height: 350px;
+    border: 1px solid black;
+}
+.previous_next_button_div {
+    height: 50px;
+    margin-top: 20px
+}
+.filter_div {
+    height: 70px;
+}
